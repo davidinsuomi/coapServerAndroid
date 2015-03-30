@@ -21,7 +21,6 @@ public class CoapServerMainActivity extends Activity {
         try {
 
             Endpoint server = new CoapServer();
-
             Log.e(TAG, "SampleServer listening at port %d." + server.port());
 
         } catch (SocketException e) {

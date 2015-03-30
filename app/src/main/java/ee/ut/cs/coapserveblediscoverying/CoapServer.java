@@ -47,7 +47,7 @@ public class CoapServer extends LocalEndpoint{
             Response response = new Response(CodeRegistry.RESP_CONTENT);
 
             // set payload
-            response.setPayload("192.168.1.1 \n 192.168.1.2 \n 192.168.1.3");
+            response.setPayload("192.168.1.1,192.168.1.2,192.168.1.3");
 
             // complete the request
             request.respond(response);
