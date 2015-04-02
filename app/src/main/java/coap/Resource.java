@@ -218,7 +218,7 @@ public abstract class Resource implements RequestHandler {
 			linkFormat.append("\";");
 		}
         if(!this.getResourceType().isEmpty()){
-            linkFormat.append("n=\"");
+            linkFormat.append("rt=\"");
             linkFormat.append(this.getResourceType());
             linkFormat.append("\";");
         }
