@@ -86,6 +86,10 @@ public abstract class Resource implements RequestHandler {
 		this.resourceName = resourceName;
 	}
 
+
+    public void setResourceType(String resourceType){
+        this.resourceType = resourceType;
+    }
 	/*
 	 * This method sets the interface description of the current resource
 	 * 
@@ -212,7 +216,12 @@ public abstract class Resource implements RequestHandler {
 			linkFormat.append("n=\"");
 			linkFormat.append(this.getResourceName());
 			linkFormat.append("\";");
-		} 
+		}
+        if(!this.getResourceType().isEmpty()){
+            linkFormat.append("n=\"");
+            linkFormat.append(this.getResourceType());
+            linkFormat.append("\";");
+        }
 		if (!this.getInterfaceDescription().isEmpty()) {
 			linkFormat.append("d=\"");
 			linkFormat.append(this.getInterfaceDescription());
@@ -308,6 +317,15 @@ public abstract class Resource implements RequestHandler {
 		return resourceName;
 	}
 
+
+    /*
+         * This method returns the resource type of the current type
+         *
+         * @return The current resource type
+         */
+    public String getResourceType(){
+        return resourceType;
+    }
 	/*
 	 * This method returns the interface description of the current resource
 	 * 
@@ -519,7 +537,8 @@ public abstract class Resource implements RequestHandler {
 	
 	//The current resource's name
 	private String resourceName;
-	
+	//The current resource's type
+    private String resourceType;
 	//The current resource's interface description
 	private String interfaceDescription;
 	

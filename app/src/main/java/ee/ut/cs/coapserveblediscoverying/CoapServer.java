@@ -38,6 +38,7 @@ public class CoapServer extends LocalEndpoint{
         public CoapResource() {
             super("coapIP");
             setResourceName("GET a list of coap IP address");
+            setResourceType("https://tools.ietf.org/html/rfc6690");
         }
 
         @Override
@@ -47,7 +48,7 @@ public class CoapServer extends LocalEndpoint{
             Response response = new Response(CodeRegistry.RESP_CONTENT);
 
             // set payload
-            response.setPayload("192.168.1.1,192.168.1.2,192.168.1.3");
+            response.setPayload("coap://localhost/,coap://localhost/,coap://localhost/");
 
             // complete the request
             request.respond(response);
