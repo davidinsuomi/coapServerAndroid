@@ -3,6 +3,9 @@ package ee.ut.cs.coapserveblediscoverying;
 import android.util.Log;
 
 import java.net.SocketException;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
 
 import coap.*;
 import endpoint.Endpoint;
@@ -38,7 +41,7 @@ public class CoapServer extends LocalEndpoint{
         public CoapResource() {
             super("coapIP");
             setResourceName("GET a list of coap IP address");
-            setResourceType("https://tools.ietf.org/html/rfc6690");
+            setResourceType("198.12.87.129");
         }
 
         @Override
@@ -66,13 +69,28 @@ public class CoapServer extends LocalEndpoint{
         public void performPOST(POSTRequest request) {
 
             // retrieve text to convert from payload
-            String text = request.getPayloadString();
-
+            String payload = request.getPayloadString();
+            PerformMatchingTemperature(payload);
             // complete the request
-            request.respond(CodeRegistry.V3_RESP_OK, text.toUpperCase());
+            request.respond(CodeRegistry.V3_RESP_OK, payload.toUpperCase());
         }
     }
+    private void PerformMatchingTemperature(String payload){
+        String ontologyUri = GetOntologyUrl(payload);
+        System.out.println(ontologyUri);
 
+    };
+
+    private String GetOntologyUrl(String payload){
+        List<String> list = new ArrayList<String>(Arrays.asList(payload.split(";")));
+        for(String string : list){
+            if(string.startsWith("rt=")){
+                return string.substring("rt=".length()).replace("\"", "");
+            }
+        }
+
+        return null;
+    }
     /*
      * Defines a resource that stores POSTed data and that creates new
      * sub-resources on PUT request where the Uri-Path doesn't yet point

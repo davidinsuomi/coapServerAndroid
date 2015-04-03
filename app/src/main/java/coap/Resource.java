@@ -33,6 +33,7 @@ public abstract class Resource implements RequestHandler {
 	public Resource (String resourceIdentifier, boolean hidden) {
 		this.resourceIdentifier = resourceIdentifier;
 		this.resourceName = new String();
+        this.resourceType = new String();
 		this.interfaceDescription = new String();
 		this.contentTypeCode = -1;
 		this.maximumSizeEstimate = -1;
