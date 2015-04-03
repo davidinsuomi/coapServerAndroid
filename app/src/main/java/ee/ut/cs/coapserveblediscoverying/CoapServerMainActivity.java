@@ -3,12 +3,6 @@ package ee.ut.cs.coapserveblediscoverying;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
-
-import coap.*;
-import endpoint.Endpoint;
-import endpoint.LocalEndpoint;
-import java.net.SocketException;
 
 /**
  * Created by weiding on 28/03/15.

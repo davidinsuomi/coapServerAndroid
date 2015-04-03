@@ -3,12 +3,18 @@ package ee.ut.cs.coapserveblediscoverying;
 import android.util.Log;
 
 import java.net.SocketException;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
 
-import coap.*;
-import endpoint.Endpoint;
+import coap.CodeRegistry;
+import coap.DELETERequest;
+import coap.GETRequest;
+import coap.LocalResource;
+import coap.Option;
+import coap.OptionNumberRegistry;
+import coap.POSTRequest;
+import coap.PUTRequest;
+import coap.ReadOnlyResource;
+import coap.Request;
+import coap.Response;
 import endpoint.LocalEndpoint;
 
 
@@ -70,27 +76,11 @@ public class CoapServer extends LocalEndpoint{
 
             // retrieve text to convert from payload
             String payload = request.getPayloadString();
-            PerformMatchingTemperature(payload);
             // complete the request
             request.respond(CodeRegistry.V3_RESP_OK, payload.toUpperCase());
         }
     }
-    private void PerformMatchingTemperature(String payload){
-        String ontologyUri = GetOntologyUrl(payload);
-        System.out.println(ontologyUri);
 
-    };
-
-    private String GetOntologyUrl(String payload){
-        List<String> list = new ArrayList<String>(Arrays.asList(payload.split(";")));
-        for(String string : list){
-            if(string.startsWith("rt=")){
-                return string.substring("rt=".length()).replace("\"", "");
-            }
-        }
-
-        return null;
-    }
     /*
      * Defines a resource that stores POSTed data and that creates new
      * sub-resources on PUT request where the Uri-Path doesn't yet point

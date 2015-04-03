@@ -24,7 +24,17 @@ import java.io.IOException;
 import java.net.URI;
 import java.net.URISyntaxException;
 
-import coap.*;
+import coap.DELETERequest;
+import coap.GETRequest;
+import coap.MediaTypeRegistry;
+import coap.Option;
+import coap.OptionNumberRegistry;
+import coap.POSTRequest;
+import coap.PUTRequest;
+import coap.RemoteResource;
+import coap.Request;
+import coap.Resource;
+import coap.Response;
 
 public class SampleClient {
 	

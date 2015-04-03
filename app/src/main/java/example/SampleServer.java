@@ -2,8 +2,17 @@ package example;
 
 import java.net.SocketException;
 
-import coap.*;
-
+import coap.CodeRegistry;
+import coap.DELETERequest;
+import coap.GETRequest;
+import coap.LocalResource;
+import coap.Option;
+import coap.OptionNumberRegistry;
+import coap.POSTRequest;
+import coap.PUTRequest;
+import coap.ReadOnlyResource;
+import coap.Request;
+import coap.Response;
 import endpoint.Endpoint;
 import endpoint.LocalEndpoint;
 
