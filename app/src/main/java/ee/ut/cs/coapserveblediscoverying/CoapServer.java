@@ -18,6 +18,8 @@ import coap.Response;
 import endpoint.LocalEndpoint;
 
 
+
+
 /**
  * Created by weiding on 28/03/15.
  */
@@ -47,7 +49,7 @@ public class CoapServer extends LocalEndpoint{
         public CoapResource() {
             super("coapIP");
             setResourceName("GET a list of coap IP address");
-            setResourceType("198.12.87.129");
+            setResourceType("http://198.12.87.129");
         }
 
         @Override
