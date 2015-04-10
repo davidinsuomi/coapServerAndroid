@@ -1,5 +1,5 @@
 package coap;
 
 public interface ResponseHandler {
-	void handleResponse(Response response);
+    void handleResponse(Response response);
 }

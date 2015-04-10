@@ -18,17 +18,16 @@ import coap.Response;
 import endpoint.LocalEndpoint;
 
 
-
-
 /**
  * Created by weiding on 28/03/15.
  */
-public class CoapServer extends LocalEndpoint{
+public class CoapServer extends LocalEndpoint {
     /*
-	 * Constructor for a new SampleServer
+     * Constructor for a new SampleServer
 	 *
 	 */
     private final String TAG = "CoapServer";
+
     public CoapServer() throws SocketException {
 
         // add resources to the server
@@ -59,7 +58,7 @@ public class CoapServer extends LocalEndpoint{
             Response response = new Response(CodeRegistry.RESP_CONTENT);
 
             // set payload
-            response.setPayload("coap://localhost/,coap://localhost/,coap://localhost/");
+            response.setPayload("coap://localhost/,coap://localhost/,coap://localhost/,coap://localhost/,coap://localhost/,coap://localhost/,coap://localhost/,coap://localhost/,coap://localhost/,coap://localhost/,coap://localhost/,coap://localhost/,coap://localhost/,coap://localhost/,coap://localhost/,coap://localhost/,coap://localhost/,coap://localhost/,coap://localhost/,coap://localhost/,coap://localhost/,coap://localhost/,coap://localhost/,coap://localhost/,coap://localhost/,coap://localhost/,coap://localhost/,coap://localhost/,coap://localhost/,coap://localhost/,coap://localhost/,coap://localhost/,coap://localhost/,coap://localhost/,coap://localhost/,coap://localhost/,coap://localhost/,coap://localhost/,coap://localhost/,coap://localhost/,coap://localhost/,coap://localhost/,coap://localhost/,coap://localhost/,coap://localhost/,coap://localhost/,coap://localhost/,coap://localhost/,coap://localhost/,coap://localhost/");
 
             // complete the request
             request.respond(response);
@@ -224,7 +223,7 @@ public class CoapServer extends LocalEndpoint{
     public void handleRequest(Request request) {
 
         // output the request
-        Log.e(TAG,"Incoming request:");
+        Log.e(TAG, "Incoming request:");
         request.log();
 
         // handle the request

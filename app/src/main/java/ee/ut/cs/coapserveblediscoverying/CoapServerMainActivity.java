@@ -13,7 +13,7 @@ public class CoapServerMainActivity extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         // create server
-        Intent intent = new Intent(this,CoapBackgroundService.class);
+        Intent intent = new Intent(this, CoapBackgroundService.class);
         startService(intent);
 
     }

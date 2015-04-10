@@ -11,10 +11,11 @@ import endpoint.Endpoint;
 /**
  * Created by weiding on 30/03/15.
  */
-public class CoapBackgroundService extends IntentService{
-    public CoapBackgroundService(){
+public class CoapBackgroundService extends IntentService {
+    public CoapBackgroundService() {
         super("CoapBackgroundService");
     }
+
     @Override
     protected void onHandleIntent(Intent intent) {
         try {
